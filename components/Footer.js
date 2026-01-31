@@ -39,7 +39,7 @@ export default function Footer() {
             <div>
               <div className="mb-3">
                 <Image
-                  src="/images/SSA-Logo 1.png"
+                  src="/images/SSA-logo 1.png"
                   alt="SSA Logo"
                   width={70}
                   height={45}
