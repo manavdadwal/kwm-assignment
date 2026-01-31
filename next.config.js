@@ -1,14 +1,20 @@
 /** @type {import('next').NextConfig} */
+
+// Replace with your GitHub repository name
+const repoName = 'kwm-assignment'
+const isProduction = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   images: {
-    domains: ['images.unsplash.com'],
-    formats: ['image/avif', 'image/webp'],
-    unoptimized: false, // Enable image optimization
+    unoptimized: true
   },
-  // For static export, use: output: 'export'
-  // For API routes and SSR, remove output config
-  // output: 'export', // Uncomment for static export only
+  // For GitHub Pages deployment
+  trailingSlash: true,
+  basePath: isProduction ? `/${repoName}` : '',
+  assetPrefix: isProduction ? `/${repoName}/` : '',
 }
 
 module.exports = nextConfig
+
